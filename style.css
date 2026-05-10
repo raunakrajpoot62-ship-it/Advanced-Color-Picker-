@@ -43,6 +43,7 @@ body {
   inset: 0;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 45%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .tag {
@@ -78,12 +79,14 @@ h1 {
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+  z-index: 1;
 }
 
 .black {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+  z-index: 2;
 }
 
 .picker-pointer {
@@ -95,6 +98,7 @@ h1 {
   transform: translate(-50%, -50%);
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2);
   pointer-events: none;
+  z-index: 3;
 }
 
 .slider-wrap label {
@@ -166,6 +170,11 @@ input[type="range"]::-moz-range-thumb {
   background: rgba(255, 255, 255, 0.08);
   color: white;
   cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.info-card button:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .buttons {
@@ -285,4 +294,4 @@ input[type="range"]::-moz-range-thumb {
     align-items: flex-start;
     gap: 12px;
   }
-  }
+}
