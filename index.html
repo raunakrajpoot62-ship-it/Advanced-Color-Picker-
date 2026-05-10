@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Color Picker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-card">
+      <div class="tag">PREMIUM COLOR SYSTEM</div>
+      <h1>Ultimate Color Picker</h1>
+      <p class="desc">
+        Create palettes, export CSS variables, and generate beautiful modern colors.
+      </p>
+    </div>
+
+    <div class="picker-card">
+      <div class="picker-area" id="pickerArea">
+        <div class="white"></div>
+        <div class="black"></div>
+        <div class="picker-pointer" id="pickerPointer"></div>
+      </div>
+
+      <div class="slider-wrap">
+        <label for="hueSlider">Hue</label>
+        <input type="range" min="0" max="360" value="260" id="hueSlider" />
+      </div>
+    </div>
+
+    <div class="preview-card" id="previewCard">
+      <div>
+        <h2>LIVE PREVIEW</h2>
+        <p id="hexValue">#7C3AED</p>
+      </div>
+      <div class="preview-text">UI</div>
+    </div>
+
+    <div class="info-card">
+      <div class="row">
+        <span id="hexText">#7C3AED</span>
+        <button onclick="copyText(hexText.innerText)">Copy</button>
+      </div>
+
+      <div class="row">
+        <span id="rgbText">rgb(124,58,237)</span>
+        <button onclick="copyText(rgbText.innerText)">Copy</button>
+      </div>
+
+      <div class="row">
+        <span id="hslText">hsl(262,83%,58%)</span>
+        <button onclick="copyText(hslText.innerText)">Copy</button>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button onclick="randomColor()">🎲 Random</button>
+      <button onclick="generatePalette()">🎨 Palette</button>
+      <button onclick="exportCSS()">📦 Export CSS</button>
+      <button onclick="clearPalette()">🗑 Clear</button>
+    </div>
+
+    <div class="palette-card">
+      <h3>MONOCHROME</h3>
+      <div class="palette-grid" id="paletteGrid"></div>
+    </div>
+
+    <div class="palette-card">
+      <h3>COMPLEMENTARY</h3>
+      <div class="palette-grid" id="complementaryGrid"></div>
+    </div>
+
+    <div class="palette-card">
+      <h3>ANALOGOUS</h3>
+      <div class="palette-grid" id="analogousGrid"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Copied</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
